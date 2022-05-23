@@ -1,0 +1,78 @@
+.team {
+  background-color: #f5f4fa;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.team-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: var(--second-title-color);
+  margin-bottom: 50px;
+  text-align: center;
+}
+.team-list {
+  display: flex;
+}
+
+.team-list__item {
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  width: 270px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.team-list__worker-data {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.team-list__worker {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--second-font-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.team-list__position {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.workers-soc-list {
+  display: flex;
+  justify-content: center;
+}
+.workers-soc-list__item + .workers-soc-list__item {
+  margin-left: 10px;
+}
+
+.workers-soc-list__link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #afb1b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: var(--focus-font-color);
+    color: var(--first-title-color);
+    outline: none;
+  }
+}
+.workers-soc-list__icon {
+  fill: currentColor;
+}

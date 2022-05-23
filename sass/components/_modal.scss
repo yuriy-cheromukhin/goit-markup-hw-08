@@ -1,0 +1,204 @@
+.backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.1);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+  color: #000000;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    color: var(--focus-font-color);
+  }
+}
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--second-title-color);
+  margin-bottom: 12px;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+.form-field-text {
+  margin-bottom: 20px;
+}
+.input-label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  padding-left: 42px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    color: rgba(33, 150, 243, 1);
+    border-color: rgba(33, 150, 243, 1);
+  }
+}
+
+.input-wrap {
+  position: relative;
+  height: 40px;
+  color: var(--second-font-color);
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: currentColor;
+  .modal-input:focus + & {
+    fill: rgba(33, 150, 243, 1);
+  }
+}
+
+.modal-text {
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  background-color: transparent;
+  padding: 12px 16px;
+  resize: none;
+  outline: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    color: rgba(33, 150, 243, 1);
+    border-color: rgba(33, 150, 243, 1);
+  }
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+  &:focus::placeholder {
+    color: rgba(33, 150, 243, 1);
+  }
+}
+
+.modal-check-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.modal-check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #303030;
+  border-radius: 3px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-icon {
+  fill: transparent;
+}
+
+.modal-check {
+  &:checked + .modal-check-text span {
+    background-color: var(--focus-font-color);
+    border: none;
+  }
+  &:focus + .modal-check-text span {
+    border-color: var(--focus-font-color);
+  }
+  &:checked + .modal-check-text .check-icon {
+    fill: #ffffff;
+  }
+}
+.conditions {
+  display: block;
+  padding-left: 5px;
+  color: var(--focus-font-color);
+}
+.submit-btn {
+  height: 50px;
+  width: 200px;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  color: var(--first-title-color);
+  cursor: pointer;
+  transition: backgraund 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background: #188ce8;
+  }
+}
